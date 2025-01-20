@@ -1,0 +1,317 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=2 cm, % seperation between body and page edge from the top
+    bottom=2 cm, % seperation between body and page edge from the bottom
+    left=2 cm, % seperation between body and page edge from the left
+    right=2 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm, % seperation between body and footer
+    % showframe % for debugging 
+]{geometry} % for adjusting page geometry
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 0, 0} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={Ashwanth Fernando's CV},
+    pdfauthor={Ashwanth Fernando},
+    pdfcreator={LaTeX},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+% Some settings:
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0.15cm} % set column seperation
+\pagenumbering{gobble} % no page numbering
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.3 cm
+}{
+    % bottom space:
+    0.2 cm
+} % section title spacing
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
+
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights for bullet entries
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0 cm + 0.00001 cm
+    }{
+        0 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for three column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{Last updated in September 2024}\hspace{\widthof{Last updated in September 2024}}
+    }}}%
+  }%
+}%
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
+
+    \begin{header}
+        \fontsize{25 pt}{25 pt}\selectfont Ashwanth Fernando
+
+        \vspace{5 pt}
+
+        \normalsize
+        \mbox{Sydney, Australia}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{mailto:ashwanthfernando@gmail.com}{ashwanthfernando@gmail.com}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{tel:+61-406-766-872}{+61-406-766-872}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/ashwanthf}{linkedin.com/in/ashwanthf}}%
+        \kern 5.0 pt%
+    \end{header}
+
+    \vspace{5 pt - 0.3 cm}
+
+    \section{Work Rights}
+        \begin{onecolentry}
+            \textbf{Australia}: Australian citizen
+        \end{onecolentry}
+        \begin{onecolentry}
+            \textbf{United States of America}: E3 visa, no quota, unlimited renewals, no sponsorship needed.
+        \end{onecolentry}
+        \begin{onecolentry}
+            \textbf{United Kingdom}: Global Talent - Exceptional Talent visa for the UK.
+        \end{onecolentry}
+    \section{Skills}
+        \begin{onecolentry}
+            \textbf{Languages:} Java | GoLang | Scala | NodeJS
+        \end{onecolentry}
+        \begin{onecolentry}
+            \textbf{Databases} MySQL | PostgreSQL | DynamoDB
+        \end{onecolentry}
+        \begin{onecolentry}
+            \textbf{CLOUD:} AWS EC2 | Elasticache | SNS | SQS | RDS | Dataform | Terraform | Jenkins
+        \end{onecolentry}
+        \begin{onecolentry}
+            \textbf{MISCELLANEOUS:} Spring | Protobuf | GoMock | Gorm | JPA | Redis | Zookeeper | Kafka | GraphQL | grpc
+        \end{onecolentry}
+        \begin{onecolentry}
+            \textbf{MANAGEMENT:} Deep focus on execution and efficiency | Relentless pursuit of excellence | Building relationships within and across teams
+        \end{onecolentry}
+    \section{Experience}
+        
+        \begin{twocolentry}{
+            July 2024 – Nov 2024
+        }
+            \textbf{Lead Software Engineer}, Packsmith\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Interfaced with PMs to create design, architecture, coding for distributed reverse logistics.
+                \item Built backend stack across different layers from app, graphql to database in record time - 1 month.
+                \item Built system to mark priority and vip orders from shopify feeds which improved shipping time for priority shipping by 140\%.
+            \end{highlights}
+        \end{onecolentry}
+        
+        \vspace{0.10 cm}
+        
+        \begin{twocolentry}{
+            Feb 2022 - Jun 2024
+        }
+        \textbf{Principal Consultant}, Atlassian, WEX and Coles\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Contributed to reactive BFF layer for performing many backend transactions for the www.coles.com.au website. Built many services that were highly available and used by customers such as Continuity, Shoppable Recipes and Trolley version upgrades.
+                \item Built back end services in the areas of report generation to speed up and increase consistency of billing cycles and removed billing errors by 14\%
+                \item Built load balancer for consistent hashing that can balance between elasticsearch clusters in active-active mode. Increased availability for confluence search by 4\% globally.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+            Nov 2018 - Jan 2022
+        }
+            \textbf{Engineering Manager|Staff Engineer}, Canva, Sydney, Australia\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Early stage developer turned manager and built a team of 6 engineers to build the back-end infrastructure for 5 products - Canva Live, Playlist, Talking Presentations, Reactions and Presentation Remote Control. Focus on product ownership, people, project management and a ~20\% coding responsibility.
+                \item Created a service to provide gradient across VS and VS add-ins, optimizing its performance via caching
+                \item Filed 3 patents on inventions related to the above products.
+                \item Written blogs on Canva's engineering website and gave talks on auto-correct.
+                \item Scaled Canva search from 20M - 80M users through search scalability improvements.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.10 cm}
+        \begin{twocolentry}{
+            Nov 2018 - Jan 2022
+        }
+            \textbf{Senior Staff Engineer}, eBay, San Jose, California\end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Built configuration system for search that allowed the business to to declare the template for search results without involving engineering. Saved a couple of weeks per change to the template that is injected between search results.
+                \item Built backend services on Scala to service conversations on eBay’s chatbot.
+                \item Wrote open source framework called Regressr that was used internally across a few departments to test regressions between v1 and v2.
+                \item Led teams of 6+ engineers on different projects during my time.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.10 cm}
+        \begin{twocolentry}{
+            SEP 2013 - OCT 2014
+        }
+            \textbf{Software Engineer L5 (ICT 5)}, Apple, Cupertino, California\end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Engineering lead for scale out 99.99\% availability elastic load balancer for ultra high scale globally deployed services related to device upgrades and activations.
+                \item Technical lead for a team of 12 engineers, managed project timelines, code reviews, task management and product vision. Helping out from time to time with achieving consensus on design and architecture decisions.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.10 cm}
+        \begin{twocolentry}{
+            OCT 2010 - SEP 2013
+        }
+            \textbf{Staff Software Engineer}, Walmart, San Bruno, California\end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Built SEO and Base variant capabilities for Walmart Canada.
+                \item Built deployment capabilities for Walmart’s cloud deployment system. Filed 2 patents for innovations in this area.
+                \item Built configuration management framework for different environments for the Walmart application platform.
+            \end{highlights}
+        \end{onecolentry}
+
+        \section{Certifications}
+        \vspace{0.10 cm}
+        \item Sun Certified Java Programmer
+        \item Sun Certified Web Components Developer
+        \item Sun Certified Business Components Developer
+        \item IBM Certified Solution Developer in XML 1.1. and Related Technologies
+        \item IBM Certified Solution Designer - Object Oriented Analysis and Design
+
+        \section{Current Areas of Interest and Exploration}
+        \vspace{0.10 cm}
+        Generative AI, Cloud, Mathematics for Machine Learning, Large scale architectures.
+\end{document}
+
+
