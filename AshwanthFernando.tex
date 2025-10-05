@@ -49,10 +49,10 @@
     \pdfgentounicode=1
     \usepackage[T1]{fontenc}
     \usepackage[utf8]{inputenc}
-    \usepackage{lmodern}
 \fi
 
-\usepackage{charter}
+\usepackage[sfdefault]{FiraSans}
+\renewcommand*\familydefault{\sfdefault}
 
 % Some settings:
 \raggedright
@@ -137,7 +137,7 @@
 } % new environment for three column entries
 
 \newenvironment{header}{
-    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+    \setlength{\topsep}{0pt}\par\kern\topsep\raggedright\linespread{1.5}
 }{
     \par\kern\topsep
 } % new environment for the header
@@ -168,25 +168,55 @@
     \sbox\ANDbox{$|$}
 
     \begin{header}
-        \fontsize{25 pt}{25 pt}\selectfont Ashwanth Fernando
-
-        \vspace{5 pt}
-
-        \normalsize
-        \mbox{\hrefWithoutArrow{mailto:ashwanthfernando@gmail.com}{ashwanthfernando@gmail.com}}%
-        \kern 5.0 pt%
-        \AND%
-        \kern 5.0 pt%
-        \ifAustralia
-            \mbox{\hrefWithoutArrow{tel:0406-766-872}{0406-766-872}}%
-        \else
-            \mbox{\hrefWithoutArrow{tel:+1-415-763-9191}{+1-415-763-9191}}%
-        \fi
-        \kern 5.0 pt%
-        \AND%
-        \kern 5.0 pt%
-        \mbox{\hrefWithoutArrow{https://linkedin.com/in/ashwanthf}{linkedin.com/in/ashwanthf}}%
-        \kern 5.0 pt%
+        \begin{tabularx}{\textwidth}{@{}X|l@{}}
+            % Left column
+            \begin{minipage}[t]{0.6\textwidth}
+                \fontsize{30 pt}{30 pt}\selectfont\textbf{Ashwanth Fernando}
+                
+                \vspace{8 pt}
+                
+                \fontsize{14 pt}{14 pt}\selectfont\textbf{Principal Engineer}
+                
+                \vspace{4 pt}
+                
+                \normalsize
+                Distributed Systems | Backend Engineering | AWS and GCP \\
+                Microservices | Product Focused and Customer First
+                
+                \vspace{10 pt}
+            \end{minipage}
+            &
+            % Right column
+            \begin{minipage}[t]{0.35\textwidth}
+                \raggedright
+                \normalsize
+                \ifAustralia
+                    \textbf{Sydney, Australia}
+                    
+                    Australian Citizen
+                \else
+                    \textbf{New York / San Francisco}
+                    
+                    Australian Citizen
+                \fi
+                
+                \vspace{4 pt}
+                
+                Email: \hrefWithoutArrow{mailto:ashwanthfernando@gmail.com}{ashwanthfernando@gmail.com}
+                
+                \ifAustralia
+                    Phone: \hrefWithoutArrow{tel:0406-766-872}{0406-766-872}
+                \else
+                    Phone: \hrefWithoutArrow{tel:+1-415-763-9191}{+1-415-763-9191}
+                \fi
+                
+                \vspace{2 pt}
+                
+                \hrefWithoutArrow{https://linkedin.com/in/ashwanthf}{LinkedIn/ashwanthf}
+                
+                \vspace{10 pt}
+            \end{minipage}
+        \end{tabularx}
     \end{header}
 
     \vspace{5 pt - 0.3 cm}
@@ -213,14 +243,14 @@
                     \item \textbf{Spouse work authorization} - E3D visa allows spouse to work in any field in the US
                     \item \textbf{Premium processing available} - 15-day guaranteed processing for urgent hiring needs
                     \item \textbf{Simplified employer process} - Only requires Labor Condition Application, no Form I-129 filing
-                \end{highlights>
+                \end{highlights}
             \fi
         \end{onecolentry}
     \section{Technical Skills}
         \begin{onecolentry}
             \textbf{Primary Languages:} Java, Go, Python, Kotlin, Scala, Node.js \\
-            \textbf{Cloud & Infrastructure:} AWS (EC2, RDS, DynamoDB, SNS/SQS, Elasticache), GCP (BigQuery, Dataform, PubSub), Terraform, Kafka, Redis, Zookeeper, Elasticsearch \\
-            \textbf{Frameworks & Tools:} Spring, GraphQL, gRPC, Temporal, Protobuf \\
+            \textbf{Cloud \& Infrastructure:} AWS (EC2, RDS, DynamoDB, SNS/SQS, Elasticache), GCP (BigQuery, Dataform, PubSub), Terraform, Kafka, Redis, Zookeeper, Elasticsearch \\
+            \textbf{Frameworks \& Tools:} Spring, GraphQL, gRPC, Temporal, Protobuf \\
             \textbf{AI:} LLMs, RAG, Langgraph, Agentic workflows, Prefect \\
             \textbf{MANAGEMENT:} Deep focus on efficient execution | Relentless pursuit of pragmatic excellence | Building relationships within and across teams to broaden impact \\
         \end{onecolentry}
