@@ -262,28 +262,61 @@
         \end{onecolentry}
     \section{Technical Skills}
         \begin{onecolentry}
-            \textbf{Primary Languages:} Java, Go, Python, Kotlin, Scala, Node.js \\
-            \textbf{Cloud \& Infrastructure:} AWS (EC2, RDS, DynamoDB, SNS/SQS, Elasticache), GCP (BigQuery, Dataform, PubSub), Terraform, Kafka, Redis, Zookeeper, Elasticsearch \\
-            \textbf{Frameworks \& Tools:} Spring, GraphQL, gRPC, Temporal, Protobuf \\
-            \textbf{AI:} LLMs, RAG, Langgraph, Agentic workflows, Prefect \\
-            \textbf{MANAGEMENT:} Deep focus on efficient execution | Relentless pursuit of pragmatic excellence | Building relationships within and across teams to broaden impact \\
+            \textbf{Languages:} Java (primary), Go, Python, Kotlin, Scala, Node.js \\
+            \textbf{Cloud \& Data:} AWS (EC2, RDS, DynamoDB, SNS/SQS, ElastiCache), GCP (BigQuery, Dataform, Pub/Sub) \\
+            \textbf{Distributed Systems \& Messaging:} Kafka, Redis, ZooKeeper, event-driven and microservices architectures, consistent hashing, active-active topologies, load balancing \\
+            \textbf{Frameworks \& APIs:} Spring, GraphQL, gRPC, Temporal, Protobuf \\
+            \textbf{Search \& Storage:} Apache Solr (indexing/serving at scale), caching strategies \\
+            \textbf{AI/ML Infra:} LLMs, RAG, LangGraph, agentic workflows, Prefect \\
+            \textbf{Testing \& Quality:} TDD, unit/integration, regression/performance testing (incl. bespoke tooling) \\
+            \textbf{DevOps:} GitHub, Bitbucket, Spinnaker, Terraform, Kubernetes, Helm \\
         \end{onecolentry}
     
     \section{Experience}
         \vspace{0.15 cm}
         \begin{twocolentry}{
-            Feb 2022 - Present
+            Jan 2022 - Present
         }
-        \textbf{Principal Consultant}, Atlassian, WEX and Macquarie Bank\end{twocolentry}
+        \textbf{Principal Engineer}, Tentacle Software\end{twocolentry}
 
         \vspace{0.10 cm}
         \begin{onecolentry}
+            \textit{I started a boutique engineering consultancy for high-throughput, low-latency platforms: consistent-hashing topologies, multi-tenant resilience, and automated delivery. I bring my entire gamut of high quality experience across a range of capabilities to these companies from project management, coding, devops and making hundreds of decisions mostly tactical due to the nature of the arrangement but some strategic.}
+            
+            \vspace{0.10 cm}
+            \textbf{Responsibilities:}
             \begin{highlights}
-                \item Served as a high end product engineer, driving technical roadmaps, architectural reviews, and production readiness across multiple client engagements.
-                \item \textbf{Macquarie Bank}: Optimized Wealth Adviser platform by GC tuning, optimising completable futures, thread pool optimization, and performance enhancements across multiple microservices, resulting in a 7\% cloud cost saving for the division.
-
-                \item \textbf{WEX}: Led backend modernization efforts for billing and reporting services, reducing billing inconsistencies by 14\% and significantly improving speed and reliability of monthly statements.
-                \item \textbf{Atlassian}: Architected a consistent-hashing load balancer for active-active Elasticsearch clusters, boosting Confluence search availability by 7\% globally. Built insta-deploy to all regions from main which was a significant improvement to dev productivity.
+                \item \textbf{0-to-1 builds:} Bootstrapped greenfield services, created surrounding ecosystems (IaC, CI/CD, SLOs, dashboards), and standardized runbooks/operability.
+                \item Led technical roadmaps, architecture reviews, contributed heavily to development and production readiness across multiple client engagements.
+                \item Drove JVM tuning, microservice performance, and cost optimisation; coached teams on reliability, observability, and CI/CD best practices.
+            \end{highlights}
+            
+            \vspace{0.10 cm}
+            \textbf{Client: Macquarie Bank}
+            \begin{highlights}
+                \item Led a cross-functional program across 20+ microservices in the Wealth Adviser Platform to remove latency hotspots fixing caching strategy, database-schema flaws, JVM GC settings, and request-processing logic; contributed targeted PRs while delivering runbooks, dashboards, and diagnostic artifacts so teams could self-remediate at pace. \textbf{Results: p95 down 14\%, p99 down 9\%, throughput up 3.5x}.
+            \end{highlights}
+            
+            \vspace{0.10 cm}
+            \textbf{Client: WEX}
+            \begin{highlights}
+                \item Rebuilt parts of an event-sourced billing ledger with idempotent charging and Kafka pipelines to guarantee ordered, deduped transactions.
+                \item Delivered end-to-end reconciliation and statement generation on BigQuery/Dataform with incremental CDC, schema versioning, and backfills.
+                \item Onboarded GoLang and was contributing code within a week.
+            \end{highlights}
+            
+            \vspace{0.10 cm}
+            \textbf{Client: Atlassian}
+            \begin{highlights}
+                \item Architected consistent-hashing load balancer for active-active Elasticsearch, increasing \textbf{Confluence search availability +7\% globally}.
+                \item Built insta-deploy to all regions from main branch, cutting \textbf{deploy lead time from 1 week to 10 hours}.
+            \end{highlights}
+            
+            \vspace{0.10 cm}
+            \textbf{Client: Coles}
+            \begin{highlights}
+                \item Built core BFF (Backend-for-Frontend) and DevOps ecosystem, cutting \textbf{end-to-end latency for Coles online grocery (coles.com.au) by >40\%}.
+                \item Partnered with security, product, and cross-team stakeholders to define requirements, v1 architecture, priority use cases, and a scale-out migration plan for remaining workloads.
             \end{highlights}
         \end{onecolentry}
 
