@@ -375,7 +375,6 @@
                 \item Drove the end-to-end technical strategy for a distributed reverse logistics platform, collaborating closely with PMs and Founders on architectural decisions, requirements and milestones.
                 \item Built a priority/vip tagging system for Shopify feeds, improving shipping times for priority orders by 140\%.
                 \item Built workflows in Temporal to optimize shipment flow, ensuring accurate stage progression and significantly reducing operational overhead.
-                \item Startup folded within 4 months and failed to attract funding. Learnt so much from the experience.
                 \item Technology Stack: GoLang, GCP, Temporal, Docker, Helm, Kubernetes, Terraform, PubSub.
             \end{highlights}
         \end{onecolentry}
@@ -405,7 +404,7 @@
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Headed the design of a dynamic configuration system and page assembler for search result templates, enabling business teams to adapt search UI/UX without direct engineering involvement, cutting weeks off typical release cycles.
+                \item Headed the design of a dynamic configuration system and page assembler for eBay's core search, enabling business teams to adapt search UI/UX without direct engineering involvement, cutting months off typical release cycles.
                 \item Built dialog system SDK to quickly ship multi-turn dialogs that include carousels, text, videos, images, questions to production. Has integrations for Facebook and Google Assistant. This dialog system can ship new complex conversations in a matter of minutes and increased Shopbot sales by more than 10x.
                 \item Created an open-source regression-testing framework (Regressr), adopted across multiple departments for real-time performance comparisons between service versions.
                 \item Led multiple project teams of six or more engineers, setting technical vision, coordinating development roadmaps, and facilitating inter-team collaboration.
@@ -420,9 +419,11 @@
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Principal Engineer for a globally distributed load balancer with 99.999\% availability across several API services.
-                \item Oversaw a team of 12 engineers, managing project timelines, code quality, and architectural decisions. Regularly facilitated consensus-building on design proposals and led strategic engineering initiatives.
+                \item Principal Engineer for a globally distributed load balancer with 99.999\% availability across several API services most notably device activations.
+                \item Oversaw a team of 12 engineers, managing project timelines, code reviews, and architectural decisions. Regularly facilitated consensus-building on design proposals and led strategic engineering initiatives.
                 \item Operationalised infrastructure for device activations across US, Canada and Europe.
+                \item Built significant parts of the platform such as config management, heartbeat monitoring and deployment orchestration.
+                \item Tech: Node.js, Zookeeper, OpenTelemetry, Java, Oracle, Akamai GSLB.
             \end{highlights}
         \end{onecolentry}
 
@@ -436,12 +437,17 @@
             \begin{highlights}
                 \item Served as architect and technical lead for Walmart Canada's SEO platform and base-variant management system, reducing bounce rates by 30\%.
                 \item Integrated product reviews into the website with BazaarVoice.
-                \item Drove cloud infrastructure modernization efforts across a large-scale fleet, invented two patents and decreased deployment cycles significantly.
+                \item Built cloud deployment parallelization for Walmart's 300+ applications saving deployment times by well over 80\%.
                 \item Instituted an enterprise-wide configuration management framework, unifying deployment practices for over 200 microservices.
+                \item Built automatic CRUD HATEOAS generator to autogenerate CRUD APIs for database tables saving IaaS teams well over 8 months of manual work.
+                \item Tech Stack: Java, ATG, Groovy, Spring, Zookeeper, JavaEE, Glu.
             \end{highlights}
         \end{onecolentry}
 
         \vspace{0.20 cm}
+        \ifAustralia
+            \newpage
+        \fi
         \textbf{EXTENDED CAREER HISTORY}
         
         \vspace{0.10 cm}
@@ -495,5 +501,18 @@
                 \item \hrefWithoutArrow{http://www.ebaytechblog.com/2017/08/10/introducing-regressr-an-open-source-command-line-tool-to-regression-test-http-services/}{Introducing Regressr: An Open Source Regression Testing Tool} - eBay Tech Blog
             \end{highlights}
         \end{onecolentry}
+
+    \ifAustralia
+        \section{Hobbies \& Interests}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item \textbf{Travelling:} Exploring new places across Australia, discovering hidden gems and scenic landscapes
+                \item \textbf{Culinary exploration:} Trying out new dinner spots and experiencing diverse cuisines
+                \item \textbf{Continuous learning:} Working on algorithmic problems and building proof-of-concept projects in free time
+                \item \textbf{Fitness:} Long walks to stay active and facilitate thinking.
+            \end{highlights}
+        \end{onecolentry}
+    \fi
 
 \end{document}
