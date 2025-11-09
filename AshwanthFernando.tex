@@ -175,13 +175,13 @@
                 
                 \vspace{8 pt}
                 
-                \fontsize{14 pt}{14 pt}\selectfont\textbf{Principal Engineer}
+                \fontsize{14 pt}{14 pt}\selectfont\textbf{Principal Software Engineer}
                 
                 \vspace{4 pt}
                 
                 \normalsize
                 Distributed Systems | Backend Engineering | AWS and GCP \\
-                Microservices | Product Focused and Customer First
+                Microservices | Product Focused and Customer First Mindset
                 
                 \vspace{10 pt}
             \end{minipage}
@@ -246,13 +246,9 @@
     \else
         \section{Location}
         Available for onsite roles in New York, SF and surrounding areas. Also open to remote arrangements from Sydney.
-    \fi
-
-    \section{Work Rights}
-        \begin{onecolentry}
-            \ifAustralia
-                \textbf{Australia}: Australian Citizen
-            \else
+        
+        \section{Work Rights}
+            \begin{onecolentry}
                 \textbf{USA Work Authorization}: Australian Citizen eligible for E3 specialty occupation visa (\href{https://images.squarespace-cdn.com/content/v1/5d56ac122a5ae60001dae37a/393450cb-ccd6-421d-b1d8-88d94fa59876/E-3+Visa+for+Australian+Citizens+%28By+Aussie+Recruit%29+-+2025.jpg?format=2500w}{click here for info})
                 \begin{highlights}
                     \item \textbf{Immediate availability} - No lottery system, processing typically within 2-4 weeks
@@ -262,8 +258,8 @@
                     \item \textbf{Premium processing available} - 15-day guaranteed processing for urgent hiring needs
                     \item \textbf{Simplified employer process} - Only requires Labor Condition Application, no Form I-129 filing
                 \end{highlights}
-            \fi
-        \end{onecolentry}
+            \end{onecolentry}
+    \fi
     \section{Technical Skills}
         \begin{onecolentry}
             \textbf{Languages:} Java (primary), Go, Python, Kotlin, Scala, Node.js \\
@@ -289,7 +285,7 @@
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{adjustwidth}{0.5cm}{0cm}
-            \textit{I started a boutique engineering consultancy for high-throughput, low-latency platforms: consistent-hashing topologies, scalability, extensibility, resilience, and automated delivery. I bring my entire gamut of high quality global experience across a range of capabilities to these companies from project management, coding, devops and making hundreds of decisions mostly tactical due to the nature of the arrangement but some strategic.}
+            \textit{I started a boutique engineering consultancy for high-throughput, low-latency platforms: consistent-hashing topologies, scalability, extensibility, resilience, and automated delivery. I bring my entire gamut of high quality global experience across a range of capabilities to these companies from project management, coding, devops and making hundreds of decisions balancing between tactical and strategic. Typical project duration is between 4 months to 1.5 years.}
             \end{adjustwidth}
             
             \vspace{0.10 cm}
@@ -301,9 +297,23 @@
                 itemsep=0pt,
                 leftmargin=0 cm + 10pt + 0.5cm
             ]
-                \item \textbf{0-to-1 builds:} Built greenfield services, created surrounding ecosystems (IaC, CI/CD, SLOs, dashboards), and standardized runbooks/operability.
+                \item \textbf{0-to-1 builds:} I’ve led the design and architecture of several greenfield services, and personally implemented the surrounding operational ecosystems, from IaC and CI/CD to SLOs, observability, and runbooks, blending strategic direction with hands-on engineering to drive faster delivery and more reliable systems.
                 \item Led technical roadmaps, architecture reviews, worked cross functionally with PMs, Product Leads, Security Architects, and other stakeholders.
                 \item Drove JVM tuning, microservice performance, and cost optimisation; coached teams on reliability, observability, and CI/CD best practices.
+            \end{itemize}
+            
+            \vspace{0.10 cm}
+            \hspace{0.5cm}\textbf{Client: Atlassian}
+            \begin{itemize}[
+                topsep=0.10 cm,
+                parsep=0.10 cm,
+                partopsep=0pt,
+                itemsep=0pt,
+                leftmargin=0 cm + 10pt + 0.5cm
+            ]
+                \item Built consistent-hashing load balancer initially for insta-switch active-passive elastic search routing, then for active-active Elasticsearch, increasing \textbf{Confluence search availability +7\% globally}.
+                \item Built insta-deploy to all regions from main branch, cutting \textbf{deploy lead time from 1 week to 10 hours}.
+                \item \textbf{Technology Stack:} Java, Spring, Spinnaker,Zookeeper, ElasticSearch, AWS, Docker.
             \end{itemize}
             
             \vspace{0.10 cm}
@@ -315,8 +325,8 @@
                 itemsep=0pt,
                 leftmargin=0 cm + 10pt + 0.5cm
             ]
-                \item Led a cross-functional program across 20+ microservices in the Wealth Adviser Platform to remove latency hotspots fixing caching strategy, reactive processing, database-schema flaws, JVM GC settings, and request-processing logic; contributed targeted PRs while delivering runbooks, dashboards, and diagnostic artifacts so teams could self-remediate at pace. \textbf{Results: p95 down 14\%, p99 down 9\%, throughput up 3.5x}.
-                \item Technology Stack: Java, Spring, Reactor, PubSub, Redis, GraphQL, Spanner, GCP, Docker.
+                \item Led a cross-functional program across 5 teams (20+ microservices) in the Wealth Adviser Platform to remove latency hotspots fixing caching strategy, reactive processing, database-schema flaws, JVM GC settings, and request-processing logic; contributed targeted PRs while delivering runbooks, dashboards, and diagnostic artifacts so teams could self-remediate at pace. \textbf{Results: p95 down 14\%, p99 down 9\%, throughput up 3.5x}.
+                \item \textbf{Technology Stack:} Java, Spring, Reactor, PubSub, Redis, GraphQL, Spanner, GCP, Docker.
             \end{itemize}
             
             \vspace{0.10 cm}
@@ -331,21 +341,7 @@
             \item Contributed to streaming analytics platform using \textbf{Spark Structured Streaming} to process \textbf{1.2M+ daily events}, implementing tumbling windows, watermarking, and stateful aggregations for real-time hotel booking metrics across global travel partners.
             \item Built event-sourced financial reconciliation system with idempotent transaction processing, maintaining \textbf{<1s accuracy} for multi-currency merchant accounts and ensuring consistency across distributed ledger replicas.
             \item Modernized Kafka → Spark → BigQuery pipeline with CDC, schema evolution, and exactly-once delivery guarantees, reducing reconciliation lag \textbf{by 65\%} and supporting 40+ partner integrations.
-            \item Technology Stack: Spark, Java, GoLang, GoMock, Kafka, Testify, Docker.
-            \end{itemize}
-            
-            \vspace{0.10 cm}
-            \hspace{0.5cm}\textbf{Client: Atlassian}
-            \begin{itemize}[
-                topsep=0.10 cm,
-                parsep=0.10 cm,
-                partopsep=0pt,
-                itemsep=0pt,
-                leftmargin=0 cm + 10pt + 0.5cm
-            ]
-                \item Built consistent-hashing load balancer initially for insta-switch active-passive elastic search routing, then for active-active Elasticsearch, increasing \textbf{Confluence search availability +7\% globally}.
-                \item Built insta-deploy to all regions from main branch, cutting \textbf{deploy lead time from 1 week to 10 hours}.
-                \item Technology Stack: Java, Spring, Zookeeper, ElasticSearch, AWS, Docker.
+            \item \textbf{Technology Stack:} Spark, Java, GoLang, GoMock, Kafka, Testify, Docker.
             \end{itemize}
             
             \vspace{0.10 cm}
@@ -359,7 +355,7 @@
             ]
                 \item Built core BFF (Backend-for-Frontend) and DevOps ecosystem, cutting \textbf{end-to-end latency for Coles online grocery (coles.com.au) by >40\%}.
                 \item Partnered with security, product, and cross-team stakeholders to define requirements, v1 architecture, priority use cases, and a scale-out migration plan for remaining workloads.
-                \item Technology Stack: Java, Kotlin, Spring, Reactor, Azure, Docker.
+                \item \textbf{Technology Stack:} Java, Kotlin, Spring, Reactor, Azure, Docker.
             \end{itemize}
         \end{onecolentry}
 
@@ -375,7 +371,7 @@
                 \item Drove the end-to-end technical strategy for a distributed reverse logistics platform, collaborating closely with PMs and Founders on architectural decisions, requirements and milestones.
                 \item Built a priority/vip tagging system for Shopify feeds, improving shipping times for priority orders by 140\%.
                 \item Built workflows in Temporal to optimize shipment flow, ensuring accurate stage progression and significantly reducing operational overhead.
-                \item Technology Stack: GoLang, GCP, Temporal, Docker, Helm, Kubernetes, Terraform, PubSub.
+                \item \textbf{Technology Stack:} GoLang, GCP, Temporal, Docker, Helm, Kubernetes, Terraform, PubSub.
             \end{highlights}
         \end{onecolentry}
         
@@ -423,7 +419,7 @@
                 \item Oversaw a team of 12 engineers, managing project timelines, code reviews, and architectural decisions. Regularly facilitated consensus-building on design proposals and led strategic engineering initiatives.
                 \item Operationalised infrastructure for device activations across US, Canada and Europe.
                 \item Built significant parts of the platform such as config management, heartbeat monitoring and deployment orchestration.
-                \item Tech: Node.js, Zookeeper, OpenTelemetry, Java, Oracle, Akamai GSLB.
+                \item \textbf{Technology Stack:} Node.js, Zookeeper, OpenTelemetry, Java, Oracle, Akamai GSLB.
             \end{highlights}
         \end{onecolentry}
 
@@ -440,7 +436,7 @@
                 \item Built cloud deployment parallelization for Walmart's 300+ applications saving deployment times by well over 80\%.
                 \item Instituted an enterprise-wide configuration management framework, unifying deployment practices for over 200 microservices.
                 \item Built automatic CRUD HATEOAS generator to autogenerate CRUD APIs for database tables saving IaaS teams well over 8 months of manual work.
-                \item Tech Stack: Java, ATG, Groovy, Spring, Zookeeper, JavaEE, Glu.
+                \item \textbf{Technology Stack:} Java, ATG, Groovy, Spring, Zookeeper, JavaEE, Glu.
             \end{highlights}
         \end{onecolentry}
 
