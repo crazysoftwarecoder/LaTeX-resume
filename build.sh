@@ -16,7 +16,7 @@ pdflatex -jobname="AshwanthFernando-Australia" "\def\AustraliaVersion{}\input{As
 
 # Build Global version
 echo -e "\n${GREEN}Building Global version...${NC}"
-pdflatex -jobname="AshwanthFernando-Global" "AshwanthFernando.tex"
+pdflatex -jobname="AshwanthFernando-Global" "\input{AshwanthFernando.tex}"
 
 # Clean up auxiliary files
 echo -e "\n${BLUE}Cleaning up auxiliary files...${NC}"
