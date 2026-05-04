@@ -303,7 +303,7 @@
             \end{itemize}
             
             \vspace{0.10 cm}
-            \hspace{0.5cm}\textbf{Client: Macquarie Bank}
+            \hspace{0.5cm}\textbf{Client: Macquarie Bank} \hfill \textit{24/02/2025 -- Present}
             \begin{itemize}[
                 topsep=0.10 cm,
                 parsep=0.10 cm,
@@ -312,12 +312,13 @@
                 leftmargin=0 cm + 10pt + 0.5cm
             ]
                 \item Led a cross-functional program across 5 teams (20+ microservices) in the Wealth Adviser Platform to remove latency hotspots fixing caching strategy, reactive processing, database-schema flaws, JVM GC settings, and request-processing logic; contributed targeted PRs while delivering runbooks, dashboards, and diagnostic artifacts so teams could self-remediate at pace. \textbf{Results: p95 down 14\%, p99 down 9\%, throughput up 3.5x}.
-                \item Contributed significantly to a multi-agent mortgage assessment pipeline using \textbf{LangGraph} with \textbf{RAG}, orchestrating document verification, serviceability analysis, compliance checks, and product recommendation agents, reducing broker pre-approval turnaround from \textbf{days to under 2 hours} while ensuring \textbf{APRA regulatory compliance}.
+                \item Built a suite of tool integrations exposing internal mortgage serviceability checking services (income verification, expense assessment, buffer-rate calculation, policy lookup) to the agent workflow layer, and tuned prompts across serviceability workflows to lift eval scores by \textbf{30\%+}, establishing the tool-calling and prompt patterns reused by downstream squads.
+                \item Built the \textbf{Enforcer} service providing a centralised guardrail layer for prompts across the serviceability analysis pipeline (input validation, output policy checks, PII redaction, and response schema enforcement), reducing policy violations in agent outputs by \textbf{70\%} and giving risk/compliance a single control plane to govern LLM behaviour across squads.
                 \item \textbf{Technology Stack:} Java, Python, Spring, Reactor, PubSub, Redis, GraphQL, Spanner, LangGraph, GCP, Docker.
             \end{itemize}
 
             \vspace{0.10 cm}
-            \hspace{0.5cm}\textbf{Client: WEX}
+            \hspace{0.5cm}\textbf{Client: WEX} \hfill \textit{03/10/2023 -- 30/06/2024}
             \begin{itemize}[
                 topsep=0.10 cm,
                 parsep=0.10 cm,
@@ -331,10 +332,8 @@
             \item \textbf{Technology Stack:} Spark, Java, GoLang, GoMock, Kafka, Testify, Docker.
             \end{itemize}
 
-
-            \newpage
             \vspace{0.10 cm}
-            \hspace{0.5cm}\textbf{Client: Atlassian}
+            \hspace{0.5cm}\textbf{Client: Atlassian} \hfill \textit{14/02/2022 -- 30/07/2023}
             \begin{itemize}[
                 topsep=0.10 cm,
                 parsep=0.10 cm,
