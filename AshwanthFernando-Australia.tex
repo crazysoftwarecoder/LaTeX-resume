@@ -8,7 +8,7 @@
     left=2 cm, % seperation between body and page edge from the left
     right=2 cm, % seperation between body and page edge from the right
     footskip=1.0 cm, % seperation between body and footer
-    % showframe % for debugging 
+    % showframe % for debugging
 ]{geometry} % for adjusting page geometry
 \usepackage{titlesec} % for customizing section titles
 \usepackage{tabularx} % for making tables with fixed width columns
@@ -17,7 +17,6 @@
 \definecolor{primaryColor}{RGB}{0, 0, 0} % define primary color
 \usepackage{enumitem} % for customizing lists
 \usepackage{fontawesome5} % for using icons
-\usepackage{amsmath} % for math
 \usepackage[
     pdftitle={Ashwanth Fernando's CV},
     pdfauthor={Ashwanth Fernando},
@@ -25,23 +24,12 @@
     colorlinks=true,
     urlcolor=primaryColor
 ]{hyperref} % for links, metadata and bookmarks
-\usepackage[pscoord]{eso-pic} % for floating text on the page
 \usepackage{calc} % for calculating lengths
 \usepackage{bookmark} % for bookmarks
-\usepackage{lastpage} % for getting the total number of pages
 \usepackage{changepage} % for one column entries (adjustwidth environment)
 \usepackage{paracol} % for two and three column entries
-\usepackage{ifthen} % for conditional statements
 \usepackage{needspace} % for avoiding page brake right after the section title
 \usepackage{iftex} % check if engine is pdflatex, xetex or luatex
-
-% Define conditional for Australia vs Global version
-\newif\ifAustralia
-\ifdefined\AustraliaVersion
-    \Australiatrue
-\else
-    \Australiafalse
-\fi
 
 % Ensure that generate pdf is machine readable/ATS parsable:
 \ifPDFTeX
@@ -90,19 +78,6 @@
     \end{itemize}
 } % new environment for highlights
 
-
-\newenvironment{highlightsforbulletentries}{
-    \begin{itemize}[
-        topsep=0.10 cm,
-        parsep=0.10 cm,
-        partopsep=0pt,
-        itemsep=0pt,
-        leftmargin=10pt
-    ]
-}{
-    \end{itemize}
-} % new environment for highlights for bullet entries
-
 \newenvironment{onecolentry}{
     \begin{adjustwidth}{
         0 cm + 0.00001 cm
@@ -124,65 +99,32 @@
     \endonecolentry
 } % new environment for two column entries
 
-\newenvironment{threecolentry}[3][]{
-    \onecolentry
-    \def\thirdColumn{#3}
-    \setcolumnwidth{, \fill, 4.5 cm}
-    \begin{paracol}{3}
-    {\raggedright #2} \switchcolumn
-}{
-    \switchcolumn \raggedleft \thirdColumn
-    \end{paracol}
-    \endonecolentry
-} % new environment for three column entries
-
 \newenvironment{header}{
     \setlength{\topsep}{0pt}\par\kern\topsep\raggedright\linespread{1.5}
 }{
     \par\kern\topsep
 } % new environment for the header
 
-\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
-  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
-    \put(
-        \LenToUnit{\paperwidth-2 cm-0 cm+0.05cm},
-        \LenToUnit{\paperheight-1.0 cm}
-    ){\vtop{{\null}\makebox[0pt][c]{
-        \small\color{gray}\textit{Last updated in September 2024}\hspace{\widthof{Last updated in September 2024}}
-    }}}%
-  }%
-}%
-
 % save the original href command in a new command:
 \let\hrefWithoutArrow\href
 
-% new command for external links:
-
-
 \begin{document}
-    \newcommand{\AND}{\unskip
-        \cleaders\copy\ANDbox\hskip\wd\ANDbox
-        \ignorespaces
-    }
-    \newsavebox\ANDbox
-    \sbox\ANDbox{$|$}
-
     \begin{header}
         \begin{tabularx}{\textwidth}{@{}X|l@{}}
             % Left column
             \begin{minipage}[t]{0.6\textwidth}
                 \fontsize{30 pt}{30 pt}\selectfont\textbf{Ashwanth Fernando}
-                
+
                 \vspace{8 pt}
-                
+
                 \fontsize{14 pt}{14 pt}\selectfont\textbf{Principal Software Engineer}
-                
+
                 \vspace{4 pt}
-                
+
                 \normalsize
                 Distributed Systems | Backend Engineering | AWS and GCP \\
                 Microservices | Product Focused and Customer First Mindset
-                
+
                 \vspace{10 pt}
             \end{minipage}
             &
@@ -190,30 +132,20 @@
             \begin{minipage}[t]{0.35\textwidth}
                 \raggedright
                 \normalsize
-                \ifAustralia
-                    \textbf{Sydney, Australia}
-                    
-                    Australian Citizen
-                \else
-                    \textbf{New York / San Francisco}
-                    
-                    Australian Citizen
-                \fi
-                
+                \textbf{Sydney, Australia}
+
+                Australian Citizen
+
                 \vspace{4 pt}
-                
+
                 Email: \hrefWithoutArrow{mailto:ashwanthfernando@gmail.com}{ashwanthfernando@gmail.com}
-                
-                \ifAustralia
-                    Phone: \hrefWithoutArrow{tel:0406-766-872}{0406-766-872}
-                \else
-                    Phone: \hrefWithoutArrow{tel:+1-415-763-9191}{+1-415-763-9191}
-                \fi
-                
+
+                Phone: \hrefWithoutArrow{tel:0406-766-872}{0406-766-872}
+
                 \vspace{2 pt}
-                
+
                 \hrefWithoutArrow{https://linkedin.com/in/ashwanthf}{LinkedIn/ashwanthf}
-                
+
                 \vspace{10 pt}
             \end{minipage}
         \end{tabularx}
@@ -222,7 +154,6 @@
     \vspace{5 pt - 0.3 cm}
 
     \section{Summary}
-    \ifAustralia
     \begin{onecolentry}
         \begin{highlights}
             \item Hands-on principal-level engineer/architect with \textbf{15+ years} building, scaling \textbf{distributed systems} and teams at \textbf{Apple}, \textbf{Canva}, \textbf{eBay}, \textbf{Atlassian} and \textbf{Walmart} driving reliability, performance, and business impact for multi-million-user products.
@@ -230,29 +161,20 @@
             \item \textbf{Platform Engineering at scale:} Built core platform systems at \textbf{Walmart} (Fortune 1) for config management, auto-generated CRUD APIs, and parallel deployment orchestration for application server fleets, enabling an \textbf{8,000-developer ecosystem} to rapidly build and scale ecommerce for Walmart US and Canada. Evangelized adoption through internal tech talks and drove migration from expensive proprietary third-party platform to open-source stack, \textbf{saving \$100+M annually}.
 
             \item Led development of 5 frontier live/collab products at \textbf{Canva} - Talking Presentations, Reactions, Remote Control, Playlist, Canva Live on the \textbf{1B+ presentations/year} platform, growing \textbf{10+M MAUs in 2 years}. Authored \textbf{patents} and evangelized through engineering blog posts.
-            
+
             \item Architected active-active load balancer with \textbf{ZooKeeper} for \textbf{Atlassian's} Elasticsearch cluster, eliminating manual failover during maintenance and reducing downtime by \textbf{20+ hours/quarter}. Increased customer \textbf{NPS for search by 15\%}.
-            
+
             \item Scaled \textbf{Canva Search from 20M to 80M MAU} (4x growth) by re-architecting ingestion from monolithic to distributed microservices, adding \textbf{Redis} L2 caching, and offloading auxiliary data from \textbf{Solr} to \textbf{MySQL}.
-            
+
             \item \textbf{Leadership:} Led teams up to 12; built/managed a 6-engineer squad at Canva while remaining hands-on (~20\%); authored \textbf{5 patents}; shipped \textbf{99.999\% availability} load balancers and \textbf{10x commerce dialog conversions}.
 
             \item \textbf{Deep and broad expertise:} I consistently learn and improve myself across a variety of technologies in the backend + cloud + AI/ML stack.
-            
+
             \item \textbf{Current focus areas:} \textbf{Instruction Fine Tuning} for \textbf{LLMs}, \textbf{RAG}, \textbf{Agentic Workflows}, \textbf{Distributed Systems}, \textbf{Platform Engineering}, \textbf{Cloud-Native Architectures}.
         \end{highlights}
     \end{onecolentry}
-    \else
-    \begin{onecolentry}
-        Hands-on principal-level engineer with \textbf{15+ years} building large-scale distributed systems and platform infrastructure at \textbf{Apple}, \textbf{Canva}, \textbf{eBay}, \textbf{Atlassian}, and \textbf{Walmart}. Scaled \textbf{Canva Search from 20M to 80M MAU} and built the team behind 5 live-collaboration products driving \textbf{10M+ MAU growth}; architected \textbf{99.999\%-availability} global load balancers at Apple; drove Walmart's migration from a proprietary commerce platform to open source, \textbf{saving \$100M+ annually}. Author of \textbf{5 US patents}. Expert in Java, Go, and Python on AWS/GCP; currently shipping production agentic AI systems (LangGraph, RAG, LLM guardrails).
-
-        \vspace{0.10 cm}
-        \textbf{Work authorization:} Australian citizen eligible for the E3 visa — no lottery, 2–4 week processing, minimal employer cost. Available onsite in New York or San Francisco, or remote from Sydney.
-    \end{onecolentry}
-    \fi
 
     \section{Technical Skills}
-        \ifAustralia
         \begin{onecolentry}
             \textbf{Languages:} Java (primary), Go, Python, Kotlin, Scala, Node.js \\
             \textbf{Cloud \& Data:} AWS (EC2, RDS, DynamoDB, SNS/SQS, ElastiCache), GCP (BigQuery, Dataform, Pub/Sub) \\
@@ -263,17 +185,8 @@
             \textbf{Testing \& Quality:} TDD, unit/integration, regression/performance testing (incl. bespoke tooling) \\
             \textbf{DevOps:} GitHub, Bitbucket, Spinnaker, Terraform, Kubernetes, Helm \\
         \end{onecolentry}
-        \else
-        \begin{onecolentry}
-            \textbf{Languages \& Databases:} Java (primary), Go, Python, Kotlin, Scala · MySQL, DynamoDB, Spanner, Redis, Elasticsearch, Solr \\
-            \textbf{Cloud \& Infrastructure:} AWS, GCP, Kubernetes, Terraform, Docker, Spinnaker · Kafka, Spark, ZooKeeper, Temporal \\
-            \textbf{Frameworks \& AI:} Spring, GraphQL, gRPC, Protobuf · LLMs, RAG, LangGraph, agentic workflows \\
-        \end{onecolentry}
-        \fi
-    
-    \ifAustralia
-        \newpage
-    \fi
+
+    \newpage
     \section{Experience}
         \vspace{0.15 cm}
         \begin{twocolentry}{
@@ -283,7 +196,6 @@
 
         \vspace{0.10 cm}
         \begin{onecolentry}
-            \ifAustralia
             \begin{adjustwidth}{0.5cm}{0cm}
             \textit{I started a boutique engineering consultancy for high-throughput, low-latency platforms: consistent-hashing topologies, scalability, extensibility, resilience, and automated delivery. I bring my entire gamut of high quality global experience across a range of capabilities to these companies from project management, coding, devops and making hundreds of decisions balancing between tactical and strategic. Typical project duration is between 4 months to 1.5 years.}
             \end{adjustwidth}
@@ -301,11 +213,6 @@
                 \item Led technical roadmaps, architecture reviews, worked cross functionally with PMs, Product Leads, Security Architects, and other stakeholders.
                 \item Drove JVM tuning, microservice performance, and cost optimisation; coached teams on reliability, observability, and CI/CD best practices.
             \end{itemize}
-            \else
-            \begin{adjustwidth}{0.5cm}{0cm}
-            \textit{Boutique engineering consultancy for high-throughput, low-latency platforms — greenfield builds, architecture reviews, performance and reliability engineering. Engagements run 4–18 months.}
-            \end{adjustwidth}
-            \fi
 
             \vspace{0.10 cm}
             \hspace{0.5cm}\textbf{Client: Macquarie Bank} \hfill \textit{24/02/2025 -- Present}
@@ -316,18 +223,10 @@
                 itemsep=0pt,
                 leftmargin=0 cm + 10pt + 0.5cm
             ]
-                \ifAustralia
                 \item Led a cross-functional program across 5 teams (20+ microservices) in the Wealth Adviser Platform to remove latency hotspots fixing caching strategy, reactive processing, database-schema flaws, JVM GC settings, and request-processing logic; contributed targeted PRs while delivering runbooks, dashboards, and diagnostic artifacts so teams could self-remediate at pace. \textbf{Results: p95 down 14\%, p99 down 9\%, throughput up 3.5x}.
                 \item Built a suite of tool integrations exposing internal mortgage serviceability checking services (income verification, expense assessment, buffer-rate calculation, policy lookup) to the agent workflow layer, and tuned prompts across serviceability workflows to lift eval scores by \textbf{30\%+}, establishing the tool-calling and prompt patterns reused by downstream squads.
                 \item Built the \textbf{Enforcer} service providing a centralised guardrail layer for prompts across the serviceability analysis pipeline (input validation, output policy checks, PII redaction, and response schema enforcement), reducing policy violations in agent outputs by \textbf{70\%} and giving risk/compliance a single control plane to govern LLM behaviour across squads.
-                \else
-                \item Led a latency program across 5 teams (20+ microservices) on the Wealth Adviser Platform — fixed caching strategy, reactive processing, schema flaws, and JVM GC settings. \textbf{p95 down 14\%, p99 down 9\%, throughput up 3.5x}.
-                \item Exposed mortgage serviceability services (income verification, expense assessment, policy lookup) as agent tools and tuned prompts across workflows, lifting eval scores \textbf{30\%+}; patterns adopted by downstream squads.
-                \item Built \textbf{Enforcer}, a centralized LLM guardrail service (input validation, output policy checks, PII redaction, schema enforcement), reducing agent policy violations by \textbf{70\%}.
-                \fi
-                \ifAustralia
                 \item \textbf{Technology Stack:} Java, Python, Spring, Reactor, PubSub, Redis, GraphQL, Spanner, LangGraph, GCP, Docker.
-                \fi
             \end{itemize}
 
             \vspace{0.10 cm}
@@ -339,18 +238,10 @@
                 itemsep=0pt,
                 leftmargin=0 cm + 10pt + 0.5cm
             ]
-            \ifAustralia
             \item Contributed to streaming analytics platform using \textbf{Spark Structured Streaming} to process \textbf{1.2M+ daily events}, implementing tumbling windows, watermarking, and stateful aggregations for real-time hotel booking metrics across global travel partners.
             \item Built event-sourced financial reconciliation system with idempotent transaction processing, maintaining \textbf{<1s accuracy} for multi-currency merchant accounts and ensuring consistency across distributed ledger replicas.
-            \item Modernized Kafka → Spark → BigQuery pipeline with CDC, schema evolution, and exactly-once delivery guarantees, reducing reconciliation lag \textbf{by 65\%} and supporting 40+ partner integrations.
-            \else
-            \item Built streaming analytics on \textbf{Spark Structured Streaming} processing \textbf{1.2M+ daily events} (windowing, watermarking, stateful aggregations) for real-time hotel booking metrics.
-            \item Built event-sourced financial reconciliation with idempotent transaction processing for multi-currency merchant accounts across distributed ledger replicas.
-            \item Modernized Kafka → Spark → BigQuery pipeline with CDC and exactly-once delivery, reducing reconciliation lag \textbf{65\%} across 40+ partner integrations.
-            \fi
-            \ifAustralia
+            \item Modernized the Kafka to Spark to BigQuery pipeline with CDC, schema evolution, and exactly-once delivery guarantees, reducing reconciliation lag \textbf{by 65\%} and supporting 40+ partner integrations.
             \item \textbf{Technology Stack:} Spark, Java, GoLang, GoMock, Kafka, Testify, Docker.
-            \fi
             \end{itemize}
 
             \vspace{0.10 cm}
@@ -364,9 +255,7 @@
             ]
                 \item Designed and led the development of consistent-hashing load balancer initially for insta-switch active-passive elastic search routing, then for active-active Elasticsearch, increasing \textbf{Confluence search availability +7\% globally}.
                 \item Partnered with deployment engineering teams to architect insta-deploy to all regions from main branch, cutting \textbf{deploy lead time from 1 week to 10 hours}.
-                \ifAustralia
                 \item \textbf{Technology Stack:} Java, Spring, Spinnaker,Zookeeper, ElasticSearch, AWS, Docker.
-                \fi
             \end{itemize}
         \end{onecolentry}
 
@@ -383,19 +272,13 @@
 
             \vspace{0.10 cm}
             \begin{highlights}
-                \ifAustralia
                 \item Led the end-to-end technical strategy for the distributed reverse logistics platform, collaborating closely with PMs and Founders on architectural decisions, requirements and milestones.
-                \else
-                \item Led end-to-end technical strategy for the distributed reverse logistics platform, partnering with founders and PMs on architecture and milestones.
-                \fi
                 \item Built a priority/vip tagging system for Shopify feeds, improving shipping times for priority orders by 140\%.
                 \item Built workflows in Temporal to optimize shipment flow, ensuring accurate stage progression and significantly reducing operational overhead.
-                \ifAustralia
                 \item \textbf{Technology Stack:} GoLang, GCP, Temporal, Docker, Helm, Kubernetes, Terraform, PubSub.
-                \fi
             \end{highlights}
         \end{onecolentry}
-        
+
         \vspace{0.15 cm}
 
         \begin{twocolentry}{
@@ -405,23 +288,16 @@
 
         \vspace{0.10 cm}
         \begin{onecolentry}
-            \ifAustralia
             \begin{adjustwidth}{0.5cm}{0cm}
             \textit{Canva is a \$42B USD visual design platform and Australia's most successful tech company, with a mission to make design accessible for everyone. Used by millions globally to create presentations, social media graphics, documents, and more. I worked in the Search and Presentation teams.}
             \end{adjustwidth}
 
             \vspace{0.10 cm}
             \begin{highlights}
-                \item Scaled \textbf{Canva Search} from \textbf{20M} to \textbf{80M MAU} by decomposing a monolithic ingestion pipeline into a microservices architecture, implementing cache deduplication and invalidation systems, and re-architecting Solr indexes to offload non-queryable fields to MySQL — reducing index footprint and improving query performance. Optimized request processing logic, fine-tuned JVM GC for consistent SLAs, and delivered autocorrection, query suggestions, trending insights, and feedback systems end-to-end while mentoring engineers on search platform design.
+                \item Scaled \textbf{Canva Search} from \textbf{20M} to \textbf{80M MAU} by decomposing a monolithic ingestion pipeline into a microservices architecture, implementing cache deduplication and invalidation systems, and re-architecting Solr indexes to offload non-queryable fields to MySQL, reducing index footprint and improving query performance. Optimized request processing logic, fine-tuned JVM GC for consistent SLAs, and delivered autocorrection, query suggestions, trending insights, and feedback systems end-to-end while mentoring engineers on search platform design.
                 \item Published technical blogs on Canva's engineering platform and delivered internal and external talks on auto-correct and Canva Live builds.
                 \item Scaled team from 0 to 6 engineers, shipping 7 live collaboration products in under 2 years that drove \textbf{10+M MAU growth (20\% of Canva's total users)}. Owned full people management lifecycle (hiring, 1-1s, performance reviews), collaborated with PMs and peer managers on roadmaps, while remaining hands-on in architecture, design, and helping with code reviews and small changes.
             \end{highlights}
-            \else
-            \begin{highlights}
-                \item Scaled \textbf{Canva Search from 20M to 80M MAU} — decomposed a monolithic ingestion pipeline into microservices, added cache deduplication/invalidation, offloaded non-queryable fields from Solr to MySQL, and tuned JVM GC for consistent SLAs; shipped autocorrection, query suggestions, and trending insights end-to-end.
-                \item Built and led a 6-engineer team shipping 7 live-collaboration products in under 2 years, driving \textbf{10M+ MAU growth (20\% of Canva's total users)} — owned hiring, 1-1s, and reviews while staying hands-on in architecture and code.
-            \end{highlights}
-            \fi
         \end{onecolentry}
 
         \vspace{0.15 cm}
@@ -431,7 +307,6 @@
             \textbf{Senior Staff Engineer}, eBay, San Jose, California\end{twocolentry}
         \vspace{0.10 cm}
         \begin{onecolentry}
-            \ifAustralia
             \begin{adjustwidth}{0.5cm}{0cm}
             \textit{eBay is a global e-commerce marketplace connecting 132 million active buyers with sellers worldwide, facilitating over \$73B in gross merchandise volume annually. One of the original internet pioneers, eBay operates in 190+ markets. I worked in the Search and New Product Development teams.}
             \end{adjustwidth}
@@ -443,13 +318,6 @@
                 \item Created an \textbf{open-source regression-testing framework (Regressr)}, adopted across multiple departments for real-time performance comparisons between service versions.
                 \item Led multiple project teams of \textbf{6+ engineers}, setting technical vision, coordinating development roadmaps, and facilitating inter-team collaboration.
             \end{highlights}
-            \else
-            \begin{highlights}
-                \item Headed design of a \textbf{dynamic configuration system} and \textbf{page assembler} for eBay's core search, letting business teams adapt search UI/UX without engineering involvement — cutting \textbf{months off release cycles}.
-                \item Built a \textbf{multi-turn dialog SDK} (carousels, media, questions) with \textbf{Facebook} and \textbf{Google Assistant} integrations, shipping complex conversations in minutes and increasing \textbf{Shopbot sales 10x}.
-                \item Created \textbf{Regressr}, an open-source regression-testing framework adopted across multiple departments; led project teams of \textbf{6+ engineers}, setting technical vision and roadmaps.
-            \end{highlights}
-            \fi
         \end{onecolentry}
 
         \vspace{0.15 cm}
@@ -459,7 +327,6 @@
             \textbf{Principal Engineer (ICT 5)}, Apple, Cupertino, California\end{twocolentry}
         \vspace{0.10 cm}
         \begin{onecolentry}
-            \ifAustralia
             \begin{adjustwidth}{0.5cm}{0cm}
             \textit{Apple is a global technology company that designs and manufactures smartphones, tablets, computers, and accessories. I worked on the device activations platform, which is a globally distributed load balancer with 99.999\% availability across several API services. I worked in the Emerging Technologies team.}
             \end{adjustwidth}
@@ -472,12 +339,6 @@
                 \item Built significant parts of the platform such as \textbf{config management}, \textbf{heartbeat monitoring} and \textbf{deployment orchestration}.
                 \item \textbf{Technology Stack:} Node.js, Zookeeper, OpenTelemetry, Java, Oracle, Akamai GSLB.
             \end{highlights}
-            \else
-            \begin{highlights}
-                \item Principal engineer for a \textbf{globally distributed load balancer} with \textbf{99.999\% availability} powering \textbf{device activations} across the US, Canada, and Europe.
-                \item Oversaw \textbf{12 engineers} — project timelines, code reviews, and architectural decisions; built core platform pieces including \textbf{config management}, \textbf{heartbeat monitoring}, and \textbf{deployment orchestration}.
-            \end{highlights}
-            \fi
         \end{onecolentry}
 
         \vspace{0.20 cm}
@@ -487,7 +348,6 @@
             \textbf{Staff Software Engineer}, Walmart, San Bruno, California\end{twocolentry}
         \vspace{0.10 cm}
         \begin{onecolentry}
-            \ifAustralia
             \begin{adjustwidth}{0.5cm}{0cm}
             \textit{Walmart is the world's largest retailer and Fortune \#1 company, operating 10,500+ stores across 19 countries with \$648B in annual revenue. With 2.1 million associates and serving 240 million customers weekly, Walmart is a global commerce and technology leader. I worked in the Canada and @Platform teams.}
             \end{adjustwidth}
@@ -501,16 +361,9 @@
                 \item Built \textbf{automatic CRUD HATEOAS generator} to autogenerate CRUD APIs for database tables saving IaaS teams \textbf{well over 8 months of manual work}.
                 \item \textbf{Technology Stack:} Java, ATG, Groovy, Spring, Zookeeper, JavaEE, Glu.
             \end{highlights}
-            \else
-            \begin{highlights}
-                \item Architect and technical lead for \textbf{Walmart Canada's SEO platform} and base-variant management system, reducing \textbf{bounce rates by 30\%}.
-                \item Built \textbf{cloud deployment parallelization} for \textbf{300+ applications} (\textbf{80\%+ faster deploys}), an \textbf{enterprise-wide config management framework} unifying 200+ microservices, and a \textbf{CRUD API auto-generator} saving IaaS teams \textbf{8+ months of manual work}.
-            \end{highlights}
-            \fi
         \end{onecolentry}
 
         \vspace{0.20 cm}
-        \ifAustralia
         \textbf{EXTENDED CAREER HISTORY}
 
         \vspace{0.10 cm}
@@ -530,11 +383,7 @@
             Apr 2010 - Sep 2010
         }
             \textbf{Software Engineer}, Walgreens\end{twocolentry}
-        \else
-        \textbf{Earlier roles:} Software Engineer at Best Buy (2005--2009), Pearson VUE (2009--2010), Walgreens (2010).
-        \fi
 
-        \ifAustralia
         \section{Courses \& Certifications}
         \vspace{0.10 cm}
         \begin{onecolentry}
@@ -567,25 +416,16 @@
                 \item \hrefWithoutArrow{http://www.ebaytechblog.com/2017/08/10/introducing-regressr-an-open-source-command-line-tool-to-regression-test-http-services/}{Introducing Regressr: An Open Source Regression Testing Tool} - eBay Tech Blog
             \end{highlights}
         \end{onecolentry}
-        \else
-        \section{Patents \& Publications}
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            \textbf{5 US patents} spanning interactive presentations (US 20230205552, US 20230205808), remote presentation control (US 20230076902), PaaS throughput (US 9342369), and multi-node deployment verification (US 20140109082). Published: \hrefWithoutArrow{https://www.canva.dev/blog/engineering/building-a-data-driven-autocorrection-system/}{Building a Data-Driven Autocorrection System} (Canva Engineering Blog), \hrefWithoutArrow{https://medium.com/canva/lessons-learnt-from-building-reactive-microservices-for-canva-live-789892c58b10}{Lessons Learnt from Building Reactive Microservices for Canva Live} (Medium/Canva), \hrefWithoutArrow{http://www.ebaytechblog.com/2017/08/10/introducing-regressr-an-open-source-command-line-tool-to-regression-test-http-services/}{Introducing Regressr} (eBay Tech Blog).
-        \end{onecolentry}
-        \fi
 
-    \ifAustralia
-        \section{Hobbies \& Interests}
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            \begin{highlights}
-                \item \textbf{Travelling:} Exploring new places across Australia, discovering hidden gems and scenic landscapes
-                \item \textbf{Culinary exploration:} Trying out new dinner spots and experiencing diverse cuisines
-                \item \textbf{Continuous learning:} Working on algorithmic problems and building proof-of-concept projects in free time
-                \item \textbf{Fitness:} Long walks to stay active and facilitate thinking.
-            \end{highlights}
-        \end{onecolentry}
-    \fi
+    \section{Hobbies \& Interests}
+    \vspace{0.10 cm}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item \textbf{Travelling:} Exploring new places across Australia, discovering hidden gems and scenic landscapes
+            \item \textbf{Culinary exploration:} Trying out new dinner spots and experiencing diverse cuisines
+            \item \textbf{Continuous learning:} Working on algorithmic problems and building proof-of-concept projects in free time
+            \item \textbf{Fitness:} Long walks to stay active and facilitate thinking.
+        \end{highlights}
+    \end{onecolentry}
 
 \end{document}

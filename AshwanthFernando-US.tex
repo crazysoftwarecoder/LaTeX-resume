@@ -1,0 +1,316 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=2 cm, % seperation between body and page edge from the top
+    bottom=2 cm, % seperation between body and page edge from the bottom
+    left=2 cm, % seperation between body and page edge from the left
+    right=2 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm, % seperation between body and footer
+    % showframe % for debugging
+]{geometry} % for adjusting page geometry
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 0, 0} % define primary color
+\definecolor{linkColor}{RGB}{0, 79, 144} % muted dark blue for external links; prints near-black in grayscale
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage[
+    pdftitle={Ashwanth Fernando's CV},
+    pdfauthor={Ashwanth Fernando},
+    pdfcreator={LaTeX},
+    colorlinks=true,
+    urlcolor=linkColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+\fi
+
+\usepackage[sfdefault]{FiraSans}
+\renewcommand*\familydefault{\sfdefault}
+
+% Some settings:
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0.15cm} % set column seperation
+\pagenumbering{gobble} % no page numbering
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.3 cm
+}{
+    % bottom space:
+    0.2 cm
+} % section title spacing
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0 cm + 0.00001 cm
+    }{
+        0 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\raggedright\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% contact links in the header stay black; readers already know they are clickable:
+\newcommand{\hrefContact}[2]{{\hypersetup{urlcolor=primaryColor}\hrefWithoutArrow{#1}{#2}}}
+
+\begin{document}
+    \begin{header}
+        \begin{tabularx}{\textwidth}{@{}X|l@{}}
+            % Left column
+            \begin{minipage}[t]{0.6\textwidth}
+                \fontsize{30 pt}{30 pt}\selectfont\textbf{Ashwanth Fernando}
+
+                \vspace{8 pt}
+
+                \fontsize{14 pt}{14 pt}\selectfont\textbf{Principal Software Engineer}
+
+                \vspace{4 pt}
+
+                \normalsize
+                Distributed Systems | Backend Engineering | AWS and GCP \\
+                Microservices | Product Focused and Customer First Mindset
+
+                \vspace{10 pt}
+            \end{minipage}
+            &
+            % Right column
+            \begin{minipage}[t]{0.35\textwidth}
+                \raggedright
+                \normalsize
+                \textbf{New York / San Francisco}
+
+                Australian Citizen
+
+                \vspace{4 pt}
+
+                Email: \hrefContact{mailto:ashwanthfernando@gmail.com}{ashwanthfernando@gmail.com}
+
+                Phone: \hrefContact{tel:+1-415-763-9191}{+1-415-763-9191}
+
+                \vspace{2 pt}
+
+                \hrefContact{https://linkedin.com/in/ashwanthf}{LinkedIn/ashwanthf}
+
+                \vspace{10 pt}
+            \end{minipage}
+        \end{tabularx}
+    \end{header}
+
+    \vspace{5 pt - 0.3 cm}
+
+    \section{Summary}
+    \begin{onecolentry}
+        Hands-on principal-level engineer with \textbf{15+ years} building large-scale distributed systems and platform infrastructure at \textbf{Apple}, \textbf{Canva}, \textbf{eBay}, \textbf{Atlassian}, and \textbf{Walmart}. Scaled \textbf{Canva Search from 20M to 80M MAU} and built the team behind 5 live-collaboration products driving \textbf{10M+ MAU growth}; architected \textbf{99.999\%-availability} global load balancers at Apple; drove Walmart's migration from a proprietary commerce platform to open source, \textbf{saving \$100M+ annually}. Author of \textbf{5 US patents}. Expert in Java, Go, and Python on AWS/GCP; currently shipping production agentic AI systems (LangGraph, RAG, LLM guardrails).
+
+        \vspace{0.10 cm}
+        \textbf{Work authorization:} Australian citizen eligible for the E3 visa: no lottery, 2–4 week processing, minimal employer cost. Available onsite in New York or San Francisco, or remote from Sydney.
+    \end{onecolentry}
+
+    \section{Technical Skills}
+        \begin{onecolentry}
+            \textbf{Languages \& Databases:} Java (primary), Go, Python, Kotlin, Scala · MySQL, DynamoDB, Spanner, Redis, Elasticsearch, Solr \\
+            \textbf{Cloud \& Infrastructure:} AWS, GCP, Kubernetes, Terraform, Docker, Spinnaker · Kafka, Spark, ZooKeeper, Temporal \\
+            \textbf{Frameworks \& AI:} Spring, GraphQL, gRPC, Protobuf · LLMs, RAG, LangGraph, agentic workflows \\
+        \end{onecolentry}
+
+    \section{Experience}
+        \vspace{0.15 cm}
+        \begin{twocolentry}{
+            Jan 2022 - Present
+        }
+        \textbf{Principal Engineer}, Tentacle Software\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{adjustwidth}{0.5cm}{0cm}
+            \textit{Boutique engineering consultancy for high-throughput, low-latency platforms: greenfield builds, architecture reviews, performance and reliability engineering. Engagements run 4–18 months.}
+            \end{adjustwidth}
+
+            \vspace{0.10 cm}
+            \hspace{0.5cm}\textbf{Client: Macquarie Bank} \hfill \textit{24/02/2025 -- Present}
+            \begin{itemize}[
+                topsep=0.10 cm,
+                parsep=0.10 cm,
+                partopsep=0pt,
+                itemsep=0pt,
+                leftmargin=0 cm + 10pt + 0.5cm
+            ]
+                \item Led a latency program across 5 teams (20+ microservices) on the Wealth Adviser Platform, fixing caching strategy, reactive processing, schema flaws, and JVM GC settings. \textbf{p95 down 14\%, p99 down 9\%, throughput up 3.5x}.
+                \item Exposed mortgage serviceability services (income verification, expense assessment, policy lookup) as agent tools and tuned prompts across workflows, lifting eval scores \textbf{30\%+}; patterns adopted by downstream squads.
+                \item Built \textbf{Enforcer}, a centralized LLM guardrail service (input validation, output policy checks, PII redaction, schema enforcement), reducing agent policy violations by \textbf{70\%}.
+            \end{itemize}
+
+            \vspace{0.10 cm}
+            \hspace{0.5cm}\textbf{Client: WEX} \hfill \textit{03/10/2023 -- 30/06/2024}
+            \begin{itemize}[
+                topsep=0.10 cm,
+                parsep=0.10 cm,
+                partopsep=0pt,
+                itemsep=0pt,
+                leftmargin=0 cm + 10pt + 0.5cm
+            ]
+            \item Built streaming analytics on \textbf{Spark Structured Streaming} processing \textbf{1.2M+ daily events} (windowing, watermarking, stateful aggregations) for real-time hotel booking metrics.
+            \item Built event-sourced financial reconciliation with idempotent transaction processing for multi-currency merchant accounts across distributed ledger replicas.
+            \item Modernized the Kafka to Spark to BigQuery pipeline with CDC and exactly-once delivery, reducing reconciliation lag \textbf{65\%} across 40+ partner integrations.
+            \end{itemize}
+
+            \vspace{0.10 cm}
+            \hspace{0.5cm}\textbf{Client: Atlassian} \hfill \textit{14/02/2022 -- 30/07/2023}
+            \begin{itemize}[
+                topsep=0.10 cm,
+                parsep=0.10 cm,
+                partopsep=0pt,
+                itemsep=0pt,
+                leftmargin=0 cm + 10pt + 0.5cm
+            ]
+                \item Designed and led the development of consistent-hashing load balancer initially for insta-switch active-passive elastic search routing, then for active-active Elasticsearch, increasing \textbf{Confluence search availability +7\% globally}.
+                \item Partnered with deployment engineering teams to architect insta-deploy to all regions from main branch, cutting \textbf{deploy lead time from 1 week to 10 hours}.
+            \end{itemize}
+        \end{onecolentry}
+
+        \vspace{0.15 cm}
+        \begin{twocolentry}{
+            Jul 2024 – Nov 2024
+        }
+        \textbf{Founding Engineer}, Packsmith\end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{adjustwidth}{0.5cm}{0cm}
+            \textit{Packsmith is an AI-driven distribution platform specializing in last mile logistics for e-commerce brands.}
+            \end{adjustwidth}
+
+            \vspace{0.10 cm}
+            \begin{highlights}
+                \item Led end-to-end technical strategy for the distributed reverse logistics platform, partnering with founders and PMs on architecture and milestones.
+                \item Built a priority/vip tagging system for Shopify feeds, improving shipping times for priority orders by 140\%.
+                \item Built workflows in Temporal to optimize shipment flow, ensuring accurate stage progression and significantly reducing operational overhead.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.15 cm}
+
+        \begin{twocolentry}{
+            Nov 2018 - Jan 2022
+        }
+            \textbf{Engineering Manager|Staff Engineer}, Canva, Sydney, Australia\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Scaled \textbf{Canva Search from 20M to 80M MAU}: decomposed a monolithic ingestion pipeline into microservices, added cache deduplication/invalidation, offloaded non-queryable fields from Solr to MySQL, and tuned JVM GC for consistent SLAs; shipped autocorrection, query suggestions, and trending insights end-to-end.
+                \item Built and led a 6-engineer team shipping 7 live-collaboration products in under 2 years, driving \textbf{10M+ MAU growth (20\% of Canva's total users)}; owned hiring, 1-1s, and reviews while staying hands-on in architecture and code.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.15 cm}
+        \begin{twocolentry}{
+            Nov 2014 - Aug 2018
+        }
+            \textbf{Senior Staff Engineer}, eBay, San Jose, California\end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Headed design of the dynamic configuration system and page assembler for eBay's core search results page, so business teams could reconfigure search UI and run experiments through configuration rather than waiting on engineering release cycles.
+                \item Built the SDK behind eBay ShopBot's multi-turn dialogs (carousels, media, clarifying questions) with Facebook Messenger and Google Assistant integrations; new conversation flows shipped through config in minutes rather than code deploys.
+                \item Created \hrefWithoutArrow{https://github.com/eBay/regressr}{Regressr}, an open-source tool that catches regressions between service versions before release; released under the eBay GitHub org and adopted by multiple departments.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.15 cm}
+        \begin{twocolentry}{
+            Sep 2013 - Oct 2014
+        }
+            \textbf{Principal Engineer (ICT 5)}, Apple, Cupertino, California\end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Led architecture and code for core pieces of a globally distributed load balancer powering device activations across the US, Canada, and Europe, held to a \textbf{99.999\% availability} SLO: the health service tracking liveness of each load balancer instance, service discovery, and the metrics pipeline capturing operational telemetry from the fleet.
+                \item Joined after the departure of the system's principal engineer; took over a partially built platform and delivered the remaining components with a team of 12, running standups and leading design reviews, notably on the metrics architecture.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.20 cm}
+        \begin{twocolentry}{
+            Oct 2010 - Sep 2013
+        }
+            \textbf{Staff Software Engineer}, Walmart, San Bruno, California\end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Architect and tech lead for automatic sitemap generation and request redirection for Walmart Canada's SEO efforts; also built the base-variant display system for managing SKUs with size variants such as t-shirts and shoes.
+                \item Hand-picked for the @Platform team, where I built a config management system adopted by 200+ microservices, a CRUD API generator that wraps a database and serves APIs with minimal hand coding, and parallel deployment orchestration for fleets of 10+ nodes.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.20 cm}
+        \textbf{Earlier roles:} Software Engineer at Best Buy (backend services for Best Buy For Business, 2005--2009), Pearson VUE (i18n framework for the monorepo behind Pearson's websites, 2009--2010), and Walgreens (led a small team adding family-member accounts for bulk prescription refills, 2010).
+
+        \section{Patents, Open Source \& Writing}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item \textbf{5 US patents:} 3 in live collaboration and interactive presentations from my Canva work (\hrefWithoutArrow{https://patents.google.com/patent/US20230205552A1}{US 2023/0205552}, \hrefWithoutArrow{https://patents.google.com/patent/US20230205808A1}{US 2023/0205808}, \hrefWithoutArrow{https://patents.google.com/patent/US20230076902A1}{US 2023/0076902}); 2 in PaaS deployment infrastructure from my Walmart platform work (\hrefWithoutArrow{https://patents.google.com/patent/US9342369B2}{US 9,342,369}, \hrefWithoutArrow{https://patents.google.com/patent/US20140109082A1}{US 2014/0109082})
+                \item \textbf{Engineering writing:} \hrefWithoutArrow{https://www.canva.dev/blog/engineering/building-a-data-driven-autocorrection-system/}{Building a Data-Driven Autocorrection System} (Canva Engineering Blog) \,·\, \hrefWithoutArrow{https://medium.com/canva/lessons-learnt-from-building-reactive-microservices-for-canva-live-789892c58b10}{Lessons Learnt Building Reactive Microservices for Canva Live} (Canva/Medium) \,·\, \hrefWithoutArrow{http://www.ebaytechblog.com/2017/08/10/introducing-regressr-an-open-source-command-line-tool-to-regression-test-http-services/}{Introducing Regressr} (eBay Tech Blog)
+            \end{highlights}
+        \end{onecolentry}
+
+\end{document}

@@ -1,8 +1,9 @@
 # LaTeX Resume - Multiple Versions
 
-This LaTeX resume supports building two different versions:
-1. **Australian version** - Shows Australian phone number and only Australian work rights
-2. **Global version** - Shows US phone number and all work rights (Australia, USA, UK)
+The resume is maintained as two standalone LaTeX files:
+
+1. **`AshwanthFernando-Australia.tex`** - Australian version (Sydney contact details, Australian phone number, full 4-page CV with extended history, certifications, and hobbies)
+2. **`AshwanthFernando-US.tex`** - US version (US phone number, E3 work-authorization note, condensed 2-page format)
 
 ## Requirements
 
@@ -18,40 +19,25 @@ This LaTeX resume supports building two different versions:
 ```
 
 This will generate both versions:
-- `AshwanthFernando-Australia.pdf` - Australian version
-- `AshwanthFernando-Global.pdf` - Global version
+- `AshwanthFernando-Australia.pdf`
+- `AshwanthFernando-US.pdf`
 
 ### Method 2: Manual Compilation
 
-To build the **Australian version**:
 ```bash
-pdflatex -jobname="AshwanthFernando-Australia" "\def\AustraliaVersion{}\input{AshwanthFernando.tex}"
-```
-
-To build the **Global version**:
-```bash
-pdflatex -jobname="AshwanthFernando-Global" "AshwanthFernando.tex"
+pdflatex AshwanthFernando-Australia.tex
+pdflatex AshwanthFernando-US.tex
 ```
 
 ## Version Differences
 
-| Feature | Australian Version | Global Version |
-|---------|-------------------|----------------|
+| Feature | Australian Version | US Version |
+|---------|-------------------|------------|
 | Phone Number | 0406-766-872 | +1-415-763-9191 |
-| Work Rights | Australian Citizen only | Australian Citizen<br>E3 Visa (USA)<br>Global Talent Visa (UK) |
+| Location | Sydney, Australia | New York / San Francisco |
+| Work Rights | Australian Citizen | E3 visa eligibility called out in summary |
+| Length | ~4 pages (extended history, certifications, hobbies) | ~2 pages (condensed) |
 
-## How It Works
+## Editing
 
-The resume uses LaTeX conditionals (`\ifAustralia`) to switch between versions. When `\AustraliaVersion` is defined during compilation, it builds the Australian version. Otherwise, it defaults to the Global version.
-
-## Customization
-
-To modify the conditional content, look for `\ifAustralia` blocks in `AshwanthFernando.tex`:
-
-```latex
-\ifAustralia
-    % Australian-specific content
-\else
-    % Global version content
-\fi
-```
+Each file is fully self-contained — edit the version you need directly. There is no shared source or conditional logic; a change that should apply to both versions must be made in both files.

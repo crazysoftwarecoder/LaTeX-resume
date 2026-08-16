@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # LaTeX Resume Build Script
-# Builds both Australian and Global versions of the resume
+# Builds both Australian and US versions of the resume
 
 # Colors for output
 GREEN='\033[0;32m'
@@ -12,11 +12,11 @@ echo -e "${BLUE}Building Ashwanth Fernando's Resume...${NC}"
 
 # Build Australian version
 echo -e "\n${GREEN}Building Australian version...${NC}"
-pdflatex -jobname="AshwanthFernando-Australia" "\def\AustraliaVersion{}\input{AshwanthFernando.tex}"
+pdflatex AshwanthFernando-Australia.tex
 
-# Build Global version
-echo -e "\n${GREEN}Building Global version...${NC}"
-pdflatex -jobname="AshwanthFernando-Global" "\input{AshwanthFernando.tex}"
+# Build US version
+echo -e "\n${GREEN}Building US version...${NC}"
+pdflatex AshwanthFernando-US.tex
 
 # Clean up auxiliary files
 echo -e "\n${BLUE}Cleaning up auxiliary files...${NC}"
@@ -25,4 +25,4 @@ rm -f *.aux *.log *.out
 echo -e "\n${GREEN}Build complete!${NC}"
 echo -e "Generated files:"
 echo -e "  - AshwanthFernando-Australia.pdf (Australian version)"
-echo -e "  - AshwanthFernando-Global.pdf (Global version)"
+echo -e "  - AshwanthFernando-US.pdf (US version)"
