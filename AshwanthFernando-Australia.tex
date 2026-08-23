@@ -160,13 +160,13 @@
 
             \item \textbf{Platform Engineering at scale:} Built core platform systems at \textbf{Walmart} (Fortune 1) for config management, auto-generated CRUD APIs, and parallel deployment orchestration for application server fleets, enabling an \textbf{8,000-developer ecosystem} to rapidly build and scale ecommerce for Walmart US and Canada. Evangelized adoption through internal tech talks and drove migration from expensive proprietary third-party platform to open-source stack, \textbf{saving \$100+M annually}.
 
-            \item Led development of 5 frontier live/collab products at \textbf{Canva} - Talking Presentations, Reactions, Remote Control, Playlist, Canva Live on the \textbf{1B+ presentations/year} platform, growing \textbf{10+M MAUs in 2 years}. Authored \textbf{patents} and evangelized through engineering blog posts.
+            \item Led development of 8 live-collaboration products at \textbf{Canva}, including Talking Presentations, Reactions, Remote Control, Playlist, and Canva Live, on the \textbf{1B+ presentations/year} platform; products now used by \textbf{10M+ MAUs}. Authored \textbf{patents} and evangelized through engineering blog posts.
 
-            \item Architected active-active load balancer with \textbf{ZooKeeper} for \textbf{Atlassian's} Elasticsearch cluster, eliminating manual failover during maintenance and reducing downtime by \textbf{20+ hours/quarter}. Increased customer \textbf{NPS for search by 15\%}.
+            \item Architected active-active load balancer with \textbf{ZooKeeper} for \textbf{Atlassian's} Elasticsearch cluster, eliminating manual failover during maintenance and increasing \textbf{Confluence search availability 7\% globally}.
 
             \item Scaled \textbf{Canva Search from 20M to 80M MAU} (4x growth) by re-architecting ingestion from monolithic to distributed microservices, adding \textbf{Redis} L2 caching, and offloading auxiliary data from \textbf{Solr} to \textbf{MySQL}.
 
-            \item \textbf{Leadership:} Led teams up to 12; built/managed a 6-engineer squad at Canva while remaining hands-on (~20\%); authored \textbf{5 patents}; shipped \textbf{99.999\% availability} load balancers and \textbf{10x commerce dialog conversions}.
+            \item \textbf{Leadership:} Led teams up to 12; built/managed a 6-engineer squad at Canva while remaining hands-on (~20\%); authored \textbf{5 patents}; shipped \textbf{99.9\% availability} load balancers at Apple.
 
             \item \textbf{Deep and broad expertise:} I consistently learn and improve myself across a variety of technologies in the backend + cloud + AI/ML stack.
 
@@ -192,7 +192,7 @@
         \begin{twocolentry}{
             Jan 2022 - Present
         }
-        \textbf{Principal Engineer}, Tentacle Software\end{twocolentry}
+        \textbf{Founder / Principal Engineer}, Tentacle Software\end{twocolentry}
 
         \vspace{0.10 cm}
         \begin{onecolentry}
@@ -223,9 +223,10 @@
                 itemsep=0pt,
                 leftmargin=0 cm + 10pt + 0.5cm
             ]
+                \item Built agent skills that introspect a legacy web app used by millions of users and generate parallelised end-to-end tests across environments, validating UI results against database state; the regression harness for the modernisation below.
+                \item Using multi-agent workflows backed by that test harness, upgraded a large legacy codebase to current versions and remediated its security vulnerabilities: a program scoped at roughly \textbf{two years, completed in six weeks}.
                 \item Led a cross-functional program across 5 teams (20+ microservices) in the Wealth Adviser Platform to remove latency hotspots fixing caching strategy, reactive processing, database-schema flaws, JVM GC settings, and request-processing logic; contributed targeted PRs while delivering runbooks, dashboards, and diagnostic artifacts so teams could self-remediate at pace. \textbf{Results: p95 down 14\%, p99 down 9\%, throughput up 3.5x}.
-                \item Built a suite of tool integrations exposing internal mortgage serviceability checking services (income verification, expense assessment, buffer-rate calculation, policy lookup) to the agent workflow layer, and tuned prompts across serviceability workflows to lift eval scores by \textbf{30\%+}, establishing the tool-calling and prompt patterns reused by downstream squads.
-                \item Built the \textbf{Enforcer} service providing a centralised guardrail layer for prompts across the serviceability analysis pipeline (input validation, output policy checks, PII redaction, and response schema enforcement), reducing policy violations in agent outputs by \textbf{70\%} and giving risk/compliance a single control plane to govern LLM behaviour across squads.
+                \item Built a suite of tool integrations exposing internal mortgage serviceability checking services (income verification, expense assessment, buffer-rate calculation, policy lookup) to the agent workflow layer and tuned prompts across serviceability workflows, establishing the tool-calling and prompt patterns reused by downstream squads.
                 \item \textbf{Technology Stack:} Java, Python, Spring, Reactor, PubSub, Redis, GraphQL, Spanner, LangGraph, GCP, Docker.
             \end{itemize}
 
@@ -239,8 +240,8 @@
                 leftmargin=0 cm + 10pt + 0.5cm
             ]
             \item Contributed to streaming analytics platform using \textbf{Spark Structured Streaming} to process \textbf{1.2M+ daily events}, implementing tumbling windows, watermarking, and stateful aggregations for real-time hotel booking metrics across global travel partners.
-            \item Built event-sourced financial reconciliation system with idempotent transaction processing, maintaining \textbf{<1s accuracy} for multi-currency merchant accounts and ensuring consistency across distributed ledger replicas.
-            \item Modernized the Kafka to Spark to BigQuery pipeline with CDC, schema evolution, and exactly-once delivery guarantees, reducing reconciliation lag \textbf{by 65\%} and supporting 40+ partner integrations.
+            \item Built event-sourced financial reconciliation system with idempotent transaction processing for multi-currency merchant accounts, ensuring consistency across distributed ledger replicas.
+            \item Modernized the Kafka to Spark to BigQuery pipeline with CDC, schema evolution, and exactly-once delivery guarantees across 40+ partner integrations.
             \item \textbf{Technology Stack:} Spark, Java, GoLang, GoMock, Kafka, Testify, Docker.
             \end{itemize}
 
@@ -255,7 +256,7 @@
             ]
                 \item Designed and led the development of consistent-hashing load balancer initially for insta-switch active-passive elastic search routing, then for active-active Elasticsearch, increasing \textbf{Confluence search availability +7\% globally}.
                 \item Partnered with deployment engineering teams to architect insta-deploy to all regions from main branch, cutting \textbf{deploy lead time from 1 week to 10 hours}.
-                \item \textbf{Technology Stack:} Java, Spring, Spinnaker,Zookeeper, ElasticSearch, AWS, Docker.
+                \item \textbf{Technology Stack:} Java, Spring, Spinnaker, Zookeeper, ElasticSearch, AWS, Docker.
             \end{itemize}
         \end{onecolentry}
 
@@ -267,13 +268,13 @@
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{adjustwidth}{0.5cm}{0cm}
-            \textit{Packsmith is an AI-driven distribution platform specializing in last mile logistics for e-commerce brands.}
+            \textit{Packsmith is an AI-driven distribution platform specializing in last mile logistics for e-commerce brands. Full-time founding role taken during a pause in consulting work.}
             \end{adjustwidth}
 
             \vspace{0.10 cm}
             \begin{highlights}
                 \item Led the end-to-end technical strategy for the distributed reverse logistics platform, collaborating closely with PMs and Founders on architectural decisions, requirements and milestones.
-                \item Built a priority/vip tagging system for Shopify feeds, improving shipping times for priority orders by 140\%.
+                \item Built a priority/VIP tagging system for Shopify feeds, improving shipping times for priority orders.
                 \item Built workflows in Temporal to optimize shipment flow, ensuring accurate stage progression and significantly reducing operational overhead.
                 \item \textbf{Technology Stack:} GoLang, GCP, Temporal, Docker, Helm, Kubernetes, Terraform, PubSub.
             \end{highlights}
@@ -284,7 +285,7 @@
         \begin{twocolentry}{
             Nov 2018 - Jan 2022
         }
-            \textbf{Engineering Manager|Staff Engineer}, Canva, Sydney, Australia\end{twocolentry}
+            \textbf{Engineering Manager / Staff Engineer}, Canva, Sydney, Australia\end{twocolentry}
 
         \vspace{0.10 cm}
         \begin{onecolentry}
@@ -296,7 +297,7 @@
             \begin{highlights}
                 \item Scaled \textbf{Canva Search} from \textbf{20M} to \textbf{80M MAU} by decomposing a monolithic ingestion pipeline into a microservices architecture, implementing cache deduplication and invalidation systems, and re-architecting Solr indexes to offload non-queryable fields to MySQL, reducing index footprint and improving query performance. Optimized request processing logic, fine-tuned JVM GC for consistent SLAs, and delivered autocorrection, query suggestions, trending insights, and feedback systems end-to-end while mentoring engineers on search platform design.
                 \item Published technical blogs on Canva's engineering platform and delivered internal and external talks on auto-correct and Canva Live builds.
-                \item Scaled team from 0 to 6 engineers, shipping 7 live collaboration products in under 2 years that drove \textbf{10+M MAU growth (20\% of Canva's total users)}. Owned full people management lifecycle (hiring, 1-1s, performance reviews), collaborated with PMs and peer managers on roadmaps, while remaining hands-on in architecture, design, and helping with code reviews and small changes.
+                \item Scaled team from 0 to 6 engineers, shipping 8 live-collaboration products in under 2 years, now used by \textbf{10M+ MAU}. Owned full people management lifecycle (hiring, 1-1s, performance reviews), collaborated with PMs and peer managers on roadmaps, while remaining hands-on in architecture, design, and helping with code reviews and small changes.
             \end{highlights}
         \end{onecolentry}
 
@@ -314,7 +315,7 @@
             \vspace{0.10 cm}
             \begin{highlights}
                 \item Headed the design of a \textbf{dynamic configuration system} and \textbf{page assembler} for eBay's \textbf{core search}, enabling business teams to adapt search UI/UX without direct engineering involvement, cutting \textbf{months off typical release cycles}.
-                \item Built \textbf{dialog system SDK} to quickly ship \textbf{multi-turn dialogs} that include carousels, text, videos, images, questions to production. Has integrations for \textbf{Facebook} and \textbf{Google Assistant}. This dialog system can ship new complex conversations in a matter of minutes and \textbf{increased Shopbot sales by more than 10x}.
+                \item Built \textbf{dialog system SDK} to quickly ship \textbf{multi-turn dialogs} that include carousels, text, videos, images, questions to production. Has integrations for \textbf{Facebook} and \textbf{Google Assistant}. This dialog system can ship new complex conversations in a matter of minutes rather than code deploys.
                 \item Created an \textbf{open-source regression-testing framework (Regressr)}, adopted across multiple departments for real-time performance comparisons between service versions.
                 \item Led multiple project teams of \textbf{6+ engineers}, setting technical vision, coordinating development roadmaps, and facilitating inter-team collaboration.
             \end{highlights}
@@ -328,12 +329,12 @@
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{adjustwidth}{0.5cm}{0cm}
-            \textit{Apple is a global technology company that designs and manufactures smartphones, tablets, computers, and accessories. I worked on the device activations platform, which is a globally distributed load balancer with 99.999\% availability across several API services. I worked in the Emerging Technologies team.}
+            \textit{Apple is a global technology company that designs and manufactures smartphones, tablets, computers, and accessories. I worked on the device activations platform, which is a globally distributed load balancer with 99.9\% availability across several API services. I worked in the Emerging Technologies team.}
             \end{adjustwidth}
 
             \vspace{0.10 cm}
             \begin{highlights}
-                \item Principal Engineer for a \textbf{globally distributed load balancer} with \textbf{99.999\% availability} across several API services most notably \textbf{device activations}.
+                \item Principal Engineer for a \textbf{globally distributed load balancer} with \textbf{99.9\% availability} across several API services most notably \textbf{device activations}.
                 \item Oversaw a team of \textbf{12 engineers}, managing project timelines, code reviews, and architectural decisions. Regularly facilitated consensus-building on design proposals and led strategic engineering initiatives.
                 \item Operationalised infrastructure for device activations across \textbf{US, Canada and Europe}.
                 \item Built significant parts of the platform such as \textbf{config management}, \textbf{heartbeat monitoring} and \textbf{deployment orchestration}.
