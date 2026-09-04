@@ -3,7 +3,7 @@
 The resume is maintained as two standalone LaTeX files:
 
 1. **`AshwanthFernando-Australia.tex`** - Australian version (Sydney contact details, Australian phone number, full 4-page CV with extended history, certifications, and hobbies)
-2. **`AshwanthFernando-US.tex`** - US version (US phone number, E3 work-authorization note, condensed 2-page format)
+2. **`AshwanthFernando-US.tex`** - US version (US phone number, San Francisco location, condensed 2-page format)
 
 ## Requirements
 
@@ -34,8 +34,8 @@ pdflatex AshwanthFernando-US.tex
 | Feature | Australian Version | US Version |
 |---------|-------------------|------------|
 | Phone Number | 0406-766-872 | +1-415-763-9191 |
-| Location | Sydney, Australia | New York / San Francisco |
-| Work Rights | Australian Citizen | E3 visa eligibility called out in summary |
+| Location | Sydney, Australia | San Francisco |
+| Work Rights | Australian Citizen | Australian Citizen |
 | Length | ~4 pages (extended history, certifications, hobbies) | ~2 pages (condensed) |
 
 ## Editing
