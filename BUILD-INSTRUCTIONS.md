@@ -35,7 +35,7 @@ pdflatex AshwanthFernando-US.tex
 |---------|-------------------|------------|
 | Phone Number | 0406-766-872 | +1-415-763-9191 |
 | Location | Sydney, Australia | San Francisco |
-| Work Rights | Australian Citizen | Australian Citizen |
+| Work Rights | Australian Citizen | Not stated |
 | Length | ~4 pages (extended history, certifications, hobbies) | ~2 pages (condensed) |
 
 ## Editing
